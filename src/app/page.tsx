@@ -1,5 +1,6 @@
 import Hero from "@/components/home/Hero"
 import { ProjectList } from "@/components/projects/ProjectSection"
+import About from '@/components/about/AboutGrid';
 
 
 export default function Home() {
@@ -9,18 +10,12 @@ export default function Home() {
       {/* Secciones */}
       <Hero />
 
-      <section id="proyectos" className="w-full relative z-10">
+      <section id="proyectos" className="relative z-10">
         <ProjectList />
       </section>
 
       <section id="sobre-mi" className="min-h-screen w-full flex flex-col items-center justify-center relative z-10 border-t border-white/5">
-        <h2 className="text-4xl md:text-6xl font-bold font-mono text-white tracking-tighter mb-8">
-          <span className="text-red-500 mr-4">&gt;</span>SOBRE MÍ
-        </h2>
-        <p className="text-zinc-400 max-w-2xl text-center text-lg md:text-xl px-6">
-          Desarrollador fullstack especializado en aplicaciones web de alto rendimiento.
-          Construyendo el futuro línea por línea con tecnologías modernas.
-        </p>
+        <About />
       </section>
 
       <section id="contacto" className="min-h-screen w-full flex flex-col items-center justify-center relative z-10 border-t border-white/5">

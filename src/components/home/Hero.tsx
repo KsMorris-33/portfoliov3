@@ -128,15 +128,7 @@ export default function Hero() {
                         />
                     </Button>
 
-                    <Button
-                        variant="outline"
-                        size="lg"
-                        className="group h-14 px-8 rounded-none border border-white/20 hover:border-red-500/60 bg-black/40 backdrop-blur-md hover:bg-white/5 text-white hover:text-red-300 font-mono uppercase tracking-widest transition-all shadow-[0_0_0_rgba(255,0,0,0)] hover:shadow-[0_0_15px_rgba(255,0,0,0.3)]"
-                    >
-                        <span className="flex items-center gap-2">
-                            <Fingerprint size={18} className="text-slate-500 group-hover:text-red-400 group-hover:animate-pulse transition-colors" /> Cotizar proyecto
-                        </span>
-                    </Button>
+
                 </motion.div>
             </motion.div>
 

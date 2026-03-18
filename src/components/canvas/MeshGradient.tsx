@@ -5,9 +5,12 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 function NeuralNetwork() {
-    const count = 500; // Nodos neuronales
+    const count = 500;
     const groupRef = useRef<THREE.Group>(null!);
     const linesMaterialRef = useRef<THREE.ShaderMaterial>(null!);
+
+    // 1. Inicializamos el Timer de forma persistente
+    const timer = useMemo(() => new THREE.Timer(), []);
 
     const { positions, linePositions, lineDelays } = useMemo(() => {
         const nodes: THREE.Vector3[] = [];
@@ -24,15 +27,13 @@ function NeuralNetwork() {
         const lines: number[] = [];
         const delays: number[] = [];
 
-        // Conectar nodos cercanos para crear la red neural
         for (let i = 0; i < count; i++) {
             for (let j = i + 1; j < count; j++) {
                 const dist = nodes[i].distanceTo(nodes[j]);
-                if (dist < 2.5) { // Distancia máxima para conectar
+                if (dist < 2.5) {
                     lines.push(nodes[i].x, nodes[i].y, nodes[i].z);
                     lines.push(nodes[j].x, nodes[j].y, nodes[j].z);
 
-                    // Misma fase (delay) para ambos extremos de la línea
                     const delay = Math.random() * Math.PI * 2;
                     delays.push(delay, delay);
                 }
@@ -54,15 +55,20 @@ function NeuralNetwork() {
     }, []);
 
     useFrame((state) => {
-        const t = state.clock.elapsedTime * 0.05; // Rotación lenta de la red
+        // 2. Actualizamos el timer con el tiempo actual de la simulación
+        timer.update();
+        const elapsedTime = timer.getElapsed();
+
+        const rotationTime = elapsedTime * 0.05;
 
         if (groupRef.current) {
-            groupRef.current.rotation.y = t;
-            groupRef.current.rotation.x = t * 0.5;
+            groupRef.current.rotation.y = rotationTime;
+            groupRef.current.rotation.x = rotationTime * 0.5;
         }
 
         if (linesMaterialRef.current) {
-            linesMaterialRef.current.uniforms.time.value = state.clock.elapsedTime;
+            // 3. Pasamos el tiempo del Timer al uniform del shader
+            linesMaterialRef.current.uniforms.time.value = elapsedTime;
         }
     });
 
@@ -70,7 +76,7 @@ function NeuralNetwork() {
         () => ({
             uniforms: {
                 time: { value: 0 },
-                color: { value: new THREE.Color("#782424") }, // Indigo resplandor
+                color: { value: new THREE.Color("#782424") },
             },
             vertexShader: `
                 attribute float delay;
@@ -80,10 +86,7 @@ function NeuralNetwork() {
                     vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
                     gl_Position = projectionMatrix * mvPosition;
                     
-                    // Ondulación para el brillo
                     float pulse = sin(time * 2.0 + delay * 5.0);
-                    
-                    // Solo brilla si el pulso está en su pico más alto
                     vAlpha = smoothstep(0.85, 1.0, pulse);
                 }
             `,
@@ -91,7 +94,6 @@ function NeuralNetwork() {
                 uniform vec3 color;
                 varying float vAlpha;
                 void main() {
-                    // Opacidad base muy baja, sube drásticamente al brillar
                     float finalAlpha = 0.05 + (vAlpha * 0.95);
                     gl_FragColor = vec4(color, finalAlpha);
                 }
@@ -142,10 +144,7 @@ function NeuralNetwork() {
                     </bufferGeometry>
                     <shaderMaterial
                         ref={linesMaterialRef}
-                        args={[shaderArgs]}
-                        transparent
-                        depthWrite={false}
-                        blending={THREE.AdditiveBlending}
+                        {...shaderArgs}
                     />
                 </lineSegments>
             )}
