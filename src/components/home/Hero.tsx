@@ -48,7 +48,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative min-h-screen w-full flex flex-col items-center justify-center px-6 overflow-hidden">
+        <section id="inicio" className="relative min-h-screen w-full flex flex-col items-center justify-center px-6 overflow-hidden">
             {/* Esquinas / HUD*/}
             <div className="absolute top-10 left-10 w-16 h-16 border-l-2 border-t-2 border-red-500/30 opacity-60 hidden sm:block delay-100 transition-all" />
             <div className="absolute top-10 right-10 w-16 h-16 border-r-2 border-t-2 border-red-500/30 opacity-60 hidden sm:block delay-200 transition-all" />
@@ -80,7 +80,7 @@ export default function Hero() {
                 {/* Título Principal estilo Glitch */}
                 <motion.div variants={itemVariants} className="space-y-4 relative">
                     <h2 className="text-red-500/80 text-sm md:text-base font-mono tracking-[0.3em] uppercase">
-                        // NEURAL.DEV_INTERACTION
+                        // FULLSTACK
                     </h2>
 
                     <motion.h1
@@ -98,9 +98,9 @@ export default function Hero() {
                     className="max-w-3xl mx-auto space-y-4"
                 >
                     <p className="text-slate-400 text-base md:text-xl leading-relaxed font-light font-mono text-center">
-                        <span className="text-red-500/70 mr-2">&gt;</span>Inicializando secuencias creativas...
+                        <span className="text-red-500/70 mr-2">&gt;</span>Codifica tus ideas...
                         <br className="hidden sm:block" />
-                        Especializado en construir interfaces donde el <span className="text-red-400 font-bold drop-shadow-[0_0_8px_rgba(255,0,0,0.6)]">código</span> se sincroniza con el diseño 3D interactivo. Conectando front-end con lógica neuronal.
+                        Apasionado por la tecnología, el <span className="text-red-400 font-bold drop-shadow-[0_0_8px_rgba(255,0,0,0.6)]">código</span> y la automatización. Construyamos el futuro juntos.
                     </p>
                 </motion.div>
 
@@ -117,7 +117,7 @@ export default function Hero() {
                         <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,0,0,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,0,0,0.5)_1px,transparent_1px)] bg-[size:4px_4px] group-hover:bg-[size:6px_6px] transition-all" />
 
                         <span className="relative z-10 flex items-center gap-2">
-                            <Cpu size={18} /> Iniciar_Sistema <ChevronDown className="group-hover:translate-y-1 transition-transform" />
+                            <Cpu size={18} /> Descargar CV <ChevronDown className="group-hover:translate-y-1 transition-transform" />
                         </span>
 
                         <motion.div
@@ -134,7 +134,7 @@ export default function Hero() {
                         className="group h-14 px-8 rounded-none border border-white/20 hover:border-red-500/60 bg-black/40 backdrop-blur-md hover:bg-white/5 text-white hover:text-red-300 font-mono uppercase tracking-widest transition-all shadow-[0_0_0_rgba(255,0,0,0)] hover:shadow-[0_0_15px_rgba(255,0,0,0.3)]"
                     >
                         <span className="flex items-center gap-2">
-                            <Fingerprint size={18} className="text-slate-500 group-hover:text-red-400 group-hover:animate-pulse transition-colors" /> Identificarse
+                            <Fingerprint size={18} className="text-slate-500 group-hover:text-red-400 group-hover:animate-pulse transition-colors" /> Cotizar proyecto
                         </span>
                     </Button>
                 </motion.div>
