@@ -11,9 +11,9 @@ export interface Project {
 export const PROJECTS: Project[] = [
     {
         id: "neural-nexus",
-        title: "Neural Nexus",
-        description: "Plataforma de visualización de redes neuronales en tiempo real con integración de WebGL.",
-        tags: ["Next.js", "Three.js", "Python"],
+        title: "XueTech Store",
+        description: "Ecommerce de emprendimiento propio con supa.auth y CMS",
+        tags: ["Next.js", "PostgreSQL", "Supabase"],
         image: "/projects/p1.jpg",
         color: "#3b82f6", // Blue
         year: "2024"

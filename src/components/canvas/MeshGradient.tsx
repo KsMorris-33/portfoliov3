@@ -114,6 +114,7 @@ function NeuralNetwork() {
                         count={positions.length / 3}
                         array={positions}
                         itemSize={3}
+                        args={[positions, 3]}
                     />
                 </bufferGeometry>
                 <pointsMaterial
@@ -134,12 +135,14 @@ function NeuralNetwork() {
                             count={linePositions.length / 3}
                             array={linePositions}
                             itemSize={3}
+                            args={[linePositions, 3]}
                         />
                         <bufferAttribute
                             attach="attributes-delay"
                             count={lineDelays.length}
                             array={lineDelays}
                             itemSize={1}
+                            args={[lineDelays, 1]}
                         />
                     </bufferGeometry>
                     <shaderMaterial

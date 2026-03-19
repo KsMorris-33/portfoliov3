@@ -5,10 +5,9 @@ import { Github, Twitter, Linkedin, Instagram, ArrowUpRight } from "lucide-react
 import Link from "next/link";
 
 const socialLinks = [
-    { name: "Github", icon: Github, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "Instagram", icon: Instagram, href: "#" },
+    { name: "Github", icon: Github, href: "https://github.com/KsMorris-33" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/kevin-s-morris-reyes-347117204/" },
+
 ];
 
 export default function Footer() {
@@ -24,10 +23,10 @@ export default function Footer() {
                 {/* Lado Izquierdo: Branding */}
                 <div className="flex flex-col items-center md:items-start space-y-2">
                     <div className="text-2xl font-black tracking-tighter text-white">
-                        KSM<span className="text-red-500">2027</span>
+                        Kevin<span className="text-red-500">Morris</span>
                     </div>
                     <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest">
-                        Creative Developer & 3D Artist
+                        Creative Developer & Ultra-fast learner
                     </p>
                 </div>
 
@@ -62,7 +61,7 @@ export default function Footer() {
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                         className="text-[10px] text-zinc-600 font-mono mt-2"
                     >
-                        © {currentYear} — BORN TO CODE
+                        © {currentYear} — Hire me, you will not regret it.
                     </motion.span>
                 </div>
             </div>

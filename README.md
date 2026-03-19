@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Developer Portfolio
 
-## Getting Started
+Welcome to my personal developer portfolio! This project is a modern, highly interactive web application built with a focus on performance, 3D aesthetics, and maintainable architecture.
 
-First, run the development server:
+## 🎯 Purpose
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This portfolio is designed to showcase my technical skills, projects, and professional background to recruiters and engineering teams. It features a unique "cyberpunk/dark-red" aesthetic, integrating 3D elements, smooth animations, and a seamless user experience.
+
+## 🛠️ Tech Stack & Architecture
+
+This project is built using cutting-edge technologies to ensure a robust and scalable architecture:
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router) with Turbopack for ultra-fast compilation.
+- **Language**: [TypeScript](https://www.typescriptlang.org/) for type safety and developer experience.
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) for utility-first, responsive, and maintainable styling.
+- **3D Graphics**: [Three.js](https://threejs.org/) + [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) + [Drei](https://github.com/pmndrs/drei) to render interactive 3D canvas elements.
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) for fluid, physics-based UI animations.
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) / [Radix UI](https://www.radix-ui.com/) for accessible, unstyled primitives.
+- **Form Handling & Validation**: [Zod](https://zod.dev/) for strict client-side and server-side model validation.
+- **Email Service**: [Resend](https://resend.com/) for reliable and secure contact form submissions via Server Actions.
+
+## 📂 Project Structure
+
+The codebase follows a modular and feature-centric architecture, ensuring separation of concerns and easy navigation:
+
+```text
+src/
+├── app/                  # Next.js App Router (pages, layouts, and global styles)
+├── components/           # UI Components organized by feature/domain
+│   ├── about/            # Components for the About section (grid, skills, etc.)
+│   ├── canvas/           # 3D interactive elements (Three.js/Fiber)
+│   ├── contact/          # Contact form with Zod validation
+│   ├── home/             # Hero section and landing features
+│   ├── projects/         # Portfolio projects showcase
+│   ├── shared/           # Reusable layout components (Navbar, Footer, etc.)
+│   └── ui/               # Core atomic UI primitives (buttons, inputs, etc.)
+├── hooks/                # Custom React hooks for shared logic
+└── lib/                  # Utilities, Zod schemas, and Server Actions (e.g., Resend logic)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧠 Key Architectural Decisions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Feature-Sliced Design Approach**: 
+   UI components are grouped by their specific domain (e.g., `contact`, `projects`, `canvas`). This keeps the Next.js `app/` directory clean and strictly focused on routing, while logic and markup live in isolated, testable component directories.
+   
+2. **Server Actions for Form Submissions**: 
+   The contact form utilizes Next.js Server Actions (`src/lib/actions.ts`) paired with **Zod** for end-to-end type safety and validation. This eliminates the need for manual API routes and reduces client-side JavaScript.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Performance Optimization**: 
+   Utilizing **Next.js App Router** allows for aggressive static generation of pages. The 3D canvas elements are lazy-loaded and decoupled from the main DOM thread to ensure the initial page load remains lightning fast.
 
-## Learn More
+4. **Typesafe Email Handling**: 
+   The integration with **Resend** uses strongly typed payloads and includes features like `replyTo`, ensuring seamless communication directly from the developer's email client.
 
-To learn more about Next.js, take a look at the following resources:
+## 🏃‍♂️ Running Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables:
+   Create a `.env.local` file with your Resend API Key:
+   ```env
+   RESEND_API_KEY=your_api_key_here
+   ```
+4. Start the development server (runs with Turbopack):
+   ```bash
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.

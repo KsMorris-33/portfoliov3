@@ -30,14 +30,7 @@ export default function AboutGrid() {
             md:pl-25 md:pr-12   /* En desktop: mucho espacio a la izquierda para el Navbar vertical */
             border-b border-white/5 bg-transparent">
 
-            {/* Grid de fondo */}
-            <div
-                className="absolute inset-0 opacity-10 pointer-events-none"
-                style={{
-                    backgroundImage: `linear-gradient(#f00 1px, transparent 1px), linear-gradient(90deg, #f00 1px, transparent 1px)`,
-                    backgroundSize: '40px 40px'
-                }}
-            />
+
 
             {/* Luces de fondo (Blooms) */}
             <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-red-900/20 rounded-full blur-[120px] pointer-events-none" />
