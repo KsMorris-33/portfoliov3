@@ -6,52 +6,65 @@ export interface Project {
     image: string;
     color: string;
     year: string;
+    liveLink?: string;
+    repoLink?: string;
 }
 
 export const PROJECTS: Project[] = [
     {
-        id: "neural-nexus",
-        title: "XueTech Store",
-        description: "Ecommerce de emprendimiento propio con supa.auth y CMS",
+        id: "Ecommerce",
+        title: "XueTech Store v3",
+        description: "Ecommerce de emprendimiento propio con herramientas CMS y autenticación",
         tags: ["Next.js", "PostgreSQL", "Supabase"],
-        image: "/projects/p1.jpg",
+        image: "/projects/p1.avif",
         color: "#3b82f6", // Blue
-        year: "2024"
+        year: "2026",
+        liveLink: "null",
+        repoLink: "https://github.com/KsMorris-33/xt9"
     },
     {
-        id: "crypto-vault",
-        title: "Crypto Vault",
-        description: "Dashboard avanzado para la gestión de activos digitales y análisis de mercado on-chain.",
-        tags: ["TypeScript", "Tailwind", "Ethers.js"],
-        image: "/projects/p2.jpg",
+        id: "Ecommerce2",
+        title: "XueTech Store v2",
+        description: "Ecommerce simple y completo con registro, login, carrito y pagos",
+        tags: ["Javascript", "Tailwind v3", "EmailJS"],
+        image: "/projects/p2.avif",
         color: "#10b981", // Emerald
-        year: "2024"
+        year: "2023",
+        liveLink: "https://xuetech.onrender.com/",
+        repoLink: "https://github.com/xue-tech/xue-tech-store"
+
     },
     {
-        id: "quantum-ui",
-        title: "Quantum UI",
-        description: "Librería de componentes de diseño atómico optimizada para aplicaciones de alto rendimiento.",
-        tags: ["React", "Framer Motion", "Vite"],
-        image: "/projects/p3.jpg",
+        id: "Proyecto investigacion emprendimiento Soacha",
+        title: "Emprender",
+        description: "Trabajo de grupo diplomado MINTIC",
+        tags: ["Next.js", "Github", "Light/dark theme"],
+        image: "/projects/p3.avif",
         color: "#f59e0b", // Amber
-        year: "2023"
+        year: "2026",
+        liveLink: "null",
+        repoLink: "https://github.com/KsMorris-33/emprendamos"
     },
     {
-        id: "eco-track",
-        title: "Eco Track",
-        description: "Aplicación móvil para el seguimiento de la huella de carbono utilizando datos satelitales.",
-        tags: ["React Native", "Firebase", "Maps API"],
-        image: "/projects/p4.jpg",
+        id: "Portfolio v2",
+        title: "Portfolio v2",
+        description: "Portfolio personal con animaciones, elementos 3D y transiciones",
+        tags: ["React", "Tailwind", "Vite"],
+        image: "/projects/p4.avif",
         color: "#ef4444", // Red
-        year: "2023"
+        year: "2024",
+        liveLink: "https://ksmorris-33.github.io/portfoliov2/",
+        repoLink: "https://github.com/KsMorris-33/portfoliov2"
     },
     {
-        id: "void-editor",
-        title: "Void Editor",
-        description: "Editor de código minimalista basado en la web con soporte para colaboración en vivo.",
-        tags: ["WebSockets", "Monaco Editor", "Node.js"],
-        image: "/projects/p5.jpg",
+        id: "MyFirstWeb",
+        title: "Who I am",
+        description: "Pagina personal",
+        tags: ["HTML", "CSS", "Javascript"],
+        image: "/projects/p5.avif",
         color: "#8b5cf6", // Violet
-        year: "2024"
+        year: "2022",
+        liveLink: "https://ksmorris-33.github.io/kevinmorris/",
+        repoLink: "https://github.com/KsMorris-33/kevinmorris"
     }
 ];

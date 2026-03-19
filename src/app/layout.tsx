@@ -5,7 +5,13 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
 
-
+export const metadata: Metadata = {
+  title: "Kevin Morris | Hire me!",
+  description: "desarrollador web jr fullstack",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* El contenedor principal DEBE ser relative para los cálculos de scroll */}
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
-          {/* Añadimos relative aquí también */}
+          {/* Añadimos relative aquí también por si las flys */}
           <main className="relative flex-grow">
             {children}
           </main>
